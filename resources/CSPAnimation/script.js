@@ -1,0 +1,2 @@
+requirejs(['bmotion.vis'], function () {
+});
