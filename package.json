@@ -16,7 +16,9 @@
     "bmotion": "index.js"
   },
   "dependencies": {
+    "adm-zip": "^0.4.7",
     "inquirer": "^0.8.5",
+    "mkdirp": "^0.5.1",
     "q": "^1.4.1",
     "yargs": "^3.10.0"
   }
