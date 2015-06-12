@@ -5,6 +5,7 @@ var commandList = {
     version: 'Print the current version of the bmotion-prob-cli tool.',
     install: 'Download the latest version of BMotion Studio for ProB.',
     update: 'Update BMotion Studio for ProB to the latest version.',
+    default: 'Set default version of BMotion Studio for ProB.',
     server: 'Start server',
     run: 'Run a visualization.',
     init: 'Initialize a new visualization template.'
@@ -24,9 +25,25 @@ for (var cmd in commandList) {
 }
 
 if (commandList[command]) {
-    commands[command](pfolder);
+
+    if (command === 'server') {
+        var serverArgs = yargs.reset()
+            .command('start', 'Start server')
+            .command('stop', 'Stop server')
+            .example('$0 server start')
+            .example('$0 server stop')
+            .demand(2, 'must provide a valid command')
+            .argv;
+        if (argv._[1] !== 'start' && argv._[1] !== 'stop') {
+            console.log('Please provide a valid command!\n');
+            yargs.showHelp();
+            process.exit();
+        }
+    }
+    commands[command](pfolder, argv);
+
 } else {
-    yargs.showHelp();
+
 }
 
 //--------------------------------------------------------------
