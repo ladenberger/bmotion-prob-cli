@@ -1,1 +1,1 @@
-# bmotion-prob-cli
+# BMotion Studio for ProB Cli
