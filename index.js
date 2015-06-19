@@ -6,7 +6,6 @@ var commandList = {
     install: 'Download the latest version of BMotion Studio for ProB.',
     update: 'Update BMotion Studio for ProB to the latest version.',
     default: 'Set default version of BMotion Studio for ProB.',
-    server: 'Start server',
     run: 'Run a visualization.',
     init: 'Initialize a new visualization template.'
     //,online: 'Create online visualization.'
